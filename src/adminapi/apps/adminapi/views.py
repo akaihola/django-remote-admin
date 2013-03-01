@@ -9,9 +9,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 from django_remote_forms.forms import RemoteForm
 
-from adminapi.apps.adminapi.constants import ADMIN_FORM_OVERRIDES
-from adminapi.apps.adminapi.forms import LoginForm
-from adminapi.apps.adminapi.utils import LazyEncoder
+from .constants import ADMIN_FORM_OVERRIDES
+from .forms import LoginForm
+from .utils import LazyEncoder
 
 
 @csrf_exempt
