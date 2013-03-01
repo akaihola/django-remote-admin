@@ -1,3 +1,6 @@
 *~
 *.pyc
 *.egg-info
+/build
+/db
+/src/django-remote-forms
