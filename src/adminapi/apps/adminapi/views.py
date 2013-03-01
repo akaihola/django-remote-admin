@@ -136,8 +136,15 @@ def get_model_instances(request, app_label, model_name):
         else:
             current_app_label = model._meta.app_label
 
+        # Ignore callable admin change list field definitions. Sometimes these
+        # are used to display static text in a change list column, and in such
+        # cases we *could* do the call and pass the result through the
+        # API. Let's do that only once we have a use case for it.
+        regular_fields = [field_name for field_name in model_admin.list_display
+                          if isinstance(field_name, basestring)]
+
         response_data['admin'].update({
-            'list_display': model_admin.list_display,
+            'list_display': regular_fields,
             'list_editable': model_admin.list_editable,
             'ordering': model_admin.ordering
         })
