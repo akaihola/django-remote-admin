@@ -129,7 +129,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'adminapi.apps.adminapi'
+    'adminapi.apps.adminapi',
+    'adminapi.apps.userprofile'
 )
 
 # A sample logging configuration. The only tangible logging
